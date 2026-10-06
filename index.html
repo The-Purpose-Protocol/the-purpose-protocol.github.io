@@ -4,19 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Protocol Color Purple and White — Cybersecurity Community</title>
-  <meta name="description" content="Protocol Color Purple and White is a cybersecurity community teaching defenders, analysts and pentesters how to document their work professionally with Git and GitHub." />
-  <meta name="theme-color" content="#0A0512" />
+  <title>The Purpose Protocol — Learn. Build. Solve. Deliver. Create Value.</title>
+  <meta name="description" content="The Purpose Protocol is a talent incubator hub and ecosystem where skilled people are nurtured through real-world problem identification, solving and delivery — building globally relevant shapers of the next generation of innovators." />
+  <meta name="theme-color" content="#FDFAFB" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Protocol Color Purple and White" />
-  <meta property="og:description" content="A cybersecurity community. Learn to document your work like a professional." />
+  <meta property="og:title" content="The Purpose Protocol" />
+  <meta property="og:description" content="A talent incubator hub where skilled people are nurtured through real-world problem solving." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
 
-  <!-- Favicon as inline SVG data URI (purple shield) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%237C3AED' d='M16 2 4 7v9c0 8 5.3 14.7 12 16 6.7-1.3 12-8 12-16V7L16 2z'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+  <link rel="icon" href="logo.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -25,1236 +23,669 @@
     /* ============================================================
        RESET & BASE
        ============================================================ */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --plum-50:#FDF6FA;
+      --plum-100:#F9E9F2;
+      --plum-200:#F0C9E3;
+      --plum-300:#E1A0CB;
+      --plum-400:#CE74AE;
+      --plum-500:#B84A8E;
+      --plum-600:#8E2A6B;
+      --plum-700:#6B1F51;
+      --plum-800:#4A1538;
+      --plum-900:#2E0A21;
+
+      --bg:#FDFAFB;
+      --bg-soft:#F9EEF5;
+      --bg-card:#FFFFFF;
+      --bg-card-hover:#FFFFFF;
+
+      --border:rgba(142,42,107,.14);
+      --border-strong:rgba(142,42,107,.32);
+
+      --text:#1F0F1A;
+      --text-muted:#6D5A66;
+      --text-dim:#9C8A96;
+      --white:#FFFFFF;
+
+      --radius-sm:10px;
+      --radius:16px;
+      --radius-lg:24px;
+
+      --shadow-sm:0 6px 24px -14px rgba(142,42,107,.28);
+      --shadow:0 18px 44px -26px rgba(142,42,107,.4);
+      --shadow-plum:0 24px 60px -30px rgba(142,42,107,.55);
+
+      --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      --font-mono:"JetBrains Mono","Fira Code",ui-monospace,monospace;
+
+      --container:1180px;
     }
 
-    :root {
-      --purple-50: #F5F3FF;
-      --purple-100: #EDE9FE;
-      --purple-200: #DDD6FE;
-      --purple-300: #C4B5FD;
-      --purple-400: #A78BFA;
-      --purple-500: #8B5CF6;
-      --purple-600: #7C3AED;
-      --purple-700: #6D28D9;
-      --purple-800: #5B21B6;
-      --purple-900: #4C1D95;
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 
-      --bg: #0A0512;
-      --bg-soft: #120A1F;
-      --bg-card: rgba(255, 255, 255, 0.04);
-      --bg-card-hover: rgba(255, 255, 255, 0.07);
-      --border: rgba(167, 139, 250, 0.18);
-      --border-strong: rgba(167, 139, 250, 0.35);
-
-      --text: #F8F7FF;
-      --text-muted: #C9C2E0;
-      --text-dim: #9B94B8;
-
-      --white: #FFFFFF;
-
-      --radius-sm: 10px;
-      --radius: 16px;
-      --radius-lg: 24px;
-
-      --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
-      --shadow-purple: 0 20px 60px -20px rgba(124, 58, 237, 0.45);
-
-      --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-
-      --container: 1180px;
+    body{
+      font-family:var(--font-sans);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+      position:relative;
+      min-height:100vh;
     }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    img,
-    svg {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button {
-      font: inherit;
-      color: inherit;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    ::selection {
-      background: var(--purple-600);
-      color: var(--white);
-    }
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+    ::selection{background:var(--plum-600);color:var(--white)}
 
     /* ============================================================
-       BACKGROUND ATMOSPHERE
+       BACKGROUND ATMOSPHERE (soft, light)
        ============================================================ */
-    .bg-atmosphere {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      overflow: hidden;
-      pointer-events: none;
+    .bg-atmosphere{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+
+    .bg-atmosphere__orb{
+      position:absolute;border-radius:50%;filter:blur(110px);opacity:.55;will-change:transform;
+    }
+    .bg-atmosphere__orb--one{
+      width:620px;height:620px;
+      background:radial-gradient(circle,rgba(206,116,174,.35),transparent 70%);
+      top:-220px;left:-180px;animation:float 18s ease-in-out infinite;
+    }
+    .bg-atmosphere__orb--two{
+      width:540px;height:540px;
+      background:radial-gradient(circle,rgba(225,160,203,.32),transparent 70%);
+      bottom:-180px;right:-140px;animation:float 22s ease-in-out infinite reverse;
+    }
+    .bg-atmosphere__orb--three{
+      width:440px;height:440px;
+      background:radial-gradient(circle,rgba(240,201,227,.4),transparent 70%);
+      top:44%;left:50%;transform:translate(-50%,-50%);
+      animation:float 26s ease-in-out infinite;
     }
 
-    .bg-atmosphere__orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.55;
-      will-change: transform;
+    @keyframes float{
+      0%,100%{transform:translate(0,0) scale(1)}
+      50%{transform:translate(40px,-40px) scale(1.08)}
     }
 
-    .bg-atmosphere__orb--one {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(124, 58, 237, 0.5), transparent 70%);
-      top: -200px;
-      left: -150px;
-      animation: float 18s ease-in-out infinite;
-    }
-
-    .bg-atmosphere__orb--two {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
-      bottom: -150px;
-      right: -100px;
-      animation: float 22s ease-in-out infinite reverse;
-    }
-
-    .bg-atmosphere__orb--three {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(167, 139, 250, 0.25), transparent 70%);
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: float 26s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-      50% {
-        transform: translate(40px, -40px) scale(1.08);
-      }
-    }
-
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
+    .bg-grid{
+      position:fixed;inset:0;z-index:-1;pointer-events:none;
       background-image:
-        linear-gradient(rgba(167, 139, 250, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(167, 139, 250, 0.045) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
+        linear-gradient(rgba(142,42,107,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(142,42,107,.05) 1px,transparent 1px);
+      background-size:56px 56px;
+      -webkit-mask-image:radial-gradient(ellipse at 50% 0%,black 25%,transparent 72%);
+              mask-image:radial-gradient(ellipse at 50% 0%,black 25%,transparent 72%);
     }
 
     /* ============================================================
        UTILITIES
        ============================================================ */
-    .container {
-      width: 100%;
-      max-width: var(--container);
-      margin-inline: auto;
-      padding-inline: 24px;
+    .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:24px}
+
+    .skip-link{
+      position:absolute;top:-100px;left:16px;z-index:999;
+      background:var(--plum-600);color:var(--white);
+      padding:10px 18px;border-radius:var(--radius-sm);
+      font-weight:600;transition:top .2s ease;
+    }
+    .skip-link:focus{top:16px}
+
+    .text-gradient{
+      background:linear-gradient(120deg,var(--plum-600),var(--plum-500) 45%,var(--plum-400));
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:transparent;
     }
 
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 16px;
-      z-index: 999;
-      background: var(--purple-600);
-      color: var(--white);
-      padding: 10px 18px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    .text-gradient {
-      background: linear-gradient(135deg, var(--purple-300), var(--purple-500) 60%, var(--white));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-
-    .icon {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
+    .icon{
+      width:18px;height:18px;stroke:currentColor;stroke-width:2;
+      stroke-linecap:round;stroke-linejoin:round;fill:none;
     }
 
     /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: -0.01em;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-        border-color 0.2s ease, color 0.2s ease;
-      white-space: nowrap;
-      border: 1px solid transparent;
-      cursor: pointer;
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:13px 24px;border-radius:999px;font-weight:600;font-size:.95rem;
+      letter-spacing:-.01em;white-space:nowrap;border:1px solid transparent;cursor:pointer;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease,
+                 border-color .2s ease,color .2s ease;
     }
-
-    .btn--primary {
-      background: linear-gradient(135deg, var(--purple-600), var(--purple-500));
-      color: var(--white);
-      box-shadow: 0 12px 30px -12px rgba(124, 58, 237, 0.8);
+    .btn--primary{
+      background:linear-gradient(135deg,var(--plum-600),var(--plum-500));
+      color:var(--white);
+      box-shadow:0 14px 30px -14px rgba(142,42,107,.85);
     }
-
-    .btn--primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px -14px rgba(124, 58, 237, 0.9);
+    .btn--primary:hover{transform:translateY(-2px);box-shadow:0 22px 42px -16px rgba(142,42,107,.95)}
+    .btn--ghost{
+      background:#fff;
+      border-color:var(--border-strong);
+      color:var(--plum-700);
+      box-shadow:var(--shadow-sm);
     }
-
-    .btn--ghost {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: var(--border-strong);
-      color: var(--text);
-      backdrop-filter: blur(6px);
+    .btn--ghost:hover{background:var(--plum-100);border-color:var(--plum-500);transform:translateY(-2px)}
+    .btn--wa{
+      background:#25D366;color:#053018;
+      box-shadow:0 14px 30px -14px rgba(37,211,102,.85);
     }
-
-    .btn--ghost:hover {
-      background: rgba(167, 139, 250, 0.12);
-      border-color: var(--purple-400);
-      transform: translateY(-2px);
-    }
+    .btn--wa:hover{transform:translateY(-2px);box-shadow:0 22px 42px -16px rgba(37,211,102,1)}
 
     /* Pill / eyebrow */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 16px 7px 12px;
-      border-radius: 999px;
-      background: rgba(124, 58, 237, 0.12);
-      border: 1px solid var(--border-strong);
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--purple-200);
-      letter-spacing: 0.01em;
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:7px 16px 7px 12px;border-radius:999px;
+      background:#fff;
+      border:1px solid var(--border-strong);
+      font-size:.82rem;font-weight:600;color:var(--plum-700);letter-spacing:.01em;
+      box-shadow:var(--shadow-sm);
+    }
+    .pill__dot{
+      width:8px;height:8px;border-radius:50%;background:var(--plum-500);
+      box-shadow:0 0 0 4px rgba(184,74,142,.18);
+      animation:pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.6;transform:scale(.85)}
     }
 
-    .pill__dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--purple-400);
-      box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.18);
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(0.85);
-      }
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--purple-400);
-      margin-bottom: 14px;
+    .eyebrow{
+      display:inline-block;font-size:.78rem;font-weight:700;
+      letter-spacing:.16em;text-transform:uppercase;
+      color:var(--plum-600);margin-bottom:14px;
     }
 
     /* ============================================================
        HEADER
        ============================================================ */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10, 5, 18, 0.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease, background 0.3s ease;
+    .site-header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(253,250,251,.82);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid transparent;
+      transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;
+    }
+    .site-header.is-scrolled{
+      border-bottom-color:var(--border);
+      background:rgba(253,250,251,.95);
+      box-shadow:0 8px 24px -18px rgba(142,42,107,.35);
+    }
+    .site-header__inner{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:20px;height:78px;
     }
 
-    .site-header.is-scrolled {
-      border-bottom-color: var(--border);
-      background: rgba(10, 5, 18, 0.88);
+    .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .brand__logo{
+      width:44px;height:44px;flex-shrink:0;border-radius:12px;
+      box-shadow:0 6px 18px -8px rgba(142,42,107,.7);
+    }
+    .brand__text{display:flex;flex-direction:column;line-height:1.1}
+    .brand__name{font-weight:800;font-size:1.02rem;letter-spacing:-.02em;color:var(--plum-800)}
+    .brand__tag{
+      font-size:.62rem;font-weight:700;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--plum-500);
     }
 
-    .site-header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      height: 76px;
+    .nav__list{display:flex;align-items:center;gap:4px}
+    .nav__link{
+      display:inline-block;padding:8px 14px;border-radius:999px;
+      font-size:.9rem;font-weight:500;color:var(--text-muted);
+      transition:color .2s ease,background .2s ease;
+    }
+    .nav__link:hover,.nav__link:focus-visible{
+      color:var(--plum-700);background:var(--plum-100);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
+    .nav-toggle{
+      display:none;flex-direction:column;justify-content:center;gap:5px;
+      width:44px;height:44px;border-radius:12px;
+      border:1px solid var(--border);background:#fff;
     }
-
-    .brand__logo {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.5));
+    .nav-toggle__bar{
+      display:block;width:20px;height:2px;margin-inline:auto;
+      background:var(--plum-700);border-radius:2px;
+      transition:transform .3s ease,opacity .3s ease;
     }
-
-    .brand__text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand__name {
-      font-weight: 800;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-      color: var(--white);
-    }
-
-    .brand__tag {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--purple-400);
-    }
-
-    .nav__list {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .nav__link {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-
-    .nav__link:hover,
-    .nav__link:focus-visible {
-      color: var(--white);
-      background: rgba(167, 139, 250, 0.12);
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .nav-toggle__bar {
-      display: block;
-      width: 20px;
-      height: 2px;
-      margin-inline: auto;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2){opacity:0}
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
     /* ============================================================
        HERO
        ============================================================ */
-    .hero {
-      padding: 80px 0 100px;
-      position: relative;
+    .hero{padding:70px 0 90px;position:relative}
+    .hero__inner{
+      display:grid;grid-template-columns:1.05fr 1fr;
+      gap:60px;align-items:center;
+    }
+    .hero__title{
+      font-size:clamp(2.3rem,5.2vw,3.9rem);
+      font-weight:900;line-height:1.06;letter-spacing:-.035em;
+      margin:22px 0 22px;color:var(--plum-900);
+    }
+    .hero__lead{
+      font-size:1.07rem;color:var(--text-muted);
+      max-width:52ch;margin-bottom:34px;
+    }
+    .hero__lead strong{color:var(--plum-800);font-weight:700}
+
+    .hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
+
+    .hero__meta{display:flex;gap:40px;flex-wrap:wrap}
+    .hero__meta-item{display:flex;flex-direction:column}
+    .hero__meta-item strong{
+      font-size:1.5rem;font-weight:800;color:var(--plum-800);letter-spacing:-.02em;
+    }
+    .hero__meta-item span{font-size:.82rem;color:var(--text-dim);font-weight:500}
+
+    /* Terminal (kept dark as a UI accent) */
+    .hero__visual{position:relative}
+    .terminal{
+      background:#1B0C17;
+      border:1px solid rgba(206,116,174,.35);
+      border-radius:var(--radius-lg);
+      box-shadow:0 30px 60px -30px rgba(46,10,33,.55),0 0 0 1px rgba(255,255,255,.04) inset;
+      overflow:hidden;
+    }
+    .terminal__bar{
+      display:flex;align-items:center;gap:8px;
+      padding:14px 18px;background:rgba(255,255,255,.04);
+      border-bottom:1px solid rgba(206,116,174,.18);
+    }
+    .terminal__dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+    .terminal__dot--red{background:#FF5F57}
+    .terminal__dot--amber{background:#FEBC2E}
+    .terminal__dot--green{background:#28C840}
+    .terminal__title{
+      margin-left:10px;font-family:var(--font-mono);font-size:.72rem;
+      color:rgba(240,201,227,.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .terminal__body{
+      padding:22px 20px 26px;font-family:var(--font-mono);font-size:.8rem;
+      line-height:1.85;color:var(--plum-200);white-space:pre-wrap;
+      word-break:break-word;min-height:250px;
+    }
+    .terminal__code{color:var(--plum-100)}
+    .terminal__caret{
+      display:inline-block;width:9px;height:15px;background:var(--plum-300);
+      vertical-align:middle;margin-left:2px;animation:blink 1s step-end infinite;
+    }
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+    .hero__badge{
+      display:flex;align-items:center;gap:12px;margin-top:20px;
+      padding:14px 18px;background:#fff;
+      border:1px solid var(--border);border-radius:var(--radius);
+      font-size:.85rem;color:var(--plum-800);
+      box-shadow:var(--shadow-sm);
+    }
+    .hero__badge img{width:36px;height:36px;border-radius:9px;flex-shrink:0}
+    .hero__badge strong{color:var(--plum-700)}
+
+    /* ============================================================
+       SLIDESHOW (medium plum - not dark)
+       ============================================================ */
+    .showcase{padding:20px 0 10px}
+    .showcase__inner{
+      position:relative;overflow:hidden;color:#fff;
+      border-radius:32px;
+      background:
+        radial-gradient(600px 300px at 90% -10%,rgba(240,201,227,.35),transparent 60%),
+        linear-gradient(150deg,#8E2A6B 0%,#B84A8E 55%,#CE74AE 100%);
+      box-shadow:0 30px 70px -34px rgba(142,42,107,.6);
+    }
+    .showcase__inner::after{
+      content:"";position:absolute;top:-140px;right:-120px;width:380px;height:380px;
+      border-radius:50%;pointer-events:none;
+      background:radial-gradient(circle,rgba(255,255,255,.18),transparent 68%);
     }
 
-    .hero__inner {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .slides{display:flex;transition:transform .7s cubic-bezier(.65,.05,.36,1)}
+    .slide{
+      flex:0 0 100%;min-height:330px;
+      padding:58px 62px 108px;
+      display:flex;flex-direction:column;justify-content:center;gap:16px;
+      position:relative;z-index:1;
     }
+    .slide .eyebrow{color:var(--plum-100)}
+    .slide h3{
+      font-size:clamp(1.4rem,3vw,2.05rem);
+      font-weight:800;letter-spacing:-.03em;line-height:1.15;max-width:26ch;
+    }
+    .slide p{color:rgba(255,255,255,.9);font-size:1rem;max-width:64ch}
+    .slide p strong{color:#fff}
+    .slide ul{
+      list-style:none;padding:0;margin:6px 0 0;
+      display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    }
+    .slide li{
+      display:flex;gap:10px;align-items:flex-start;
+      font-size:.93rem;color:rgba(255,255,255,.95);
+    }
+    .slide li .ic{width:17px;height:17px;color:#FFF0A8;margin-top:4px;flex-shrink:0}
 
-    .hero__title {
-      font-size: clamp(2.4rem, 5.2vw, 4rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-      margin: 22px 0 22px;
+    .showcase-nav{
+      position:absolute;left:62px;right:62px;bottom:30px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      z-index:2;
     }
+    .dots{display:flex;gap:9px;align-items:center}
+    .dot{
+      width:9px;height:9px;padding:0;border:0;border-radius:999px;
+      background:rgba(255,255,255,.4);cursor:pointer;
+      transition:width .35s,background .35s;
+    }
+    .dot:hover{background:rgba(255,255,255,.7)}
+    .dot.active{width:32px;background:#fff}
 
-    .hero__lead {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      max-width: 52ch;
-      margin-bottom: 34px;
+    .arrows{display:flex;gap:10px}
+    .arrow{
+      width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+      border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.15);
+      color:#fff;transition:.22s;
     }
+    .arrow:hover{background:#fff;color:var(--plum-700);border-color:#fff;transform:translateY(-2px)}
+    .arrow .ic{width:18px;height:18px}
 
-    .hero__lead strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
-    }
-
-    .hero__meta {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero__meta-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero__meta-item strong {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .hero__meta-item span {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-weight: 500;
-    }
-
-    /* Terminal */
-    .hero__visual {
-      position: relative;
-    }
-
-    .terminal {
-      background: rgba(10, 5, 18, 0.85);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow), 0 0 60px -30px rgba(124, 58, 237, 0.6);
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-    }
-
-    .terminal__bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .terminal__dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .terminal__dot--red {
-      background: #FF5F57;
-    }
-    .terminal__dot--amber {
-      background: #FEBC2E;
-    }
-    .terminal__dot--green {
-      background: #28C840;
-    }
-
-    .terminal__title {
-      margin-left: 10px;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .terminal__body {
-      padding: 22px 20px 26px;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      line-height: 1.85;
-      color: var(--purple-200);
-      white-space: pre-wrap;
-      word-break: break-word;
-      min-height: 220px;
-    }
-
-    .terminal__code {
-      color: var(--purple-100);
-    }
-
-    .terminal__caret {
-      display: inline-block;
-      width: 9px;
-      height: 15px;
-      background: var(--purple-400);
-      vertical-align: middle;
-      margin-left: 2px;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      0%,
-      100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .hero__badge {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-      padding: 14px 18px;
-      background: rgba(124, 58, 237, 0.1);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 0.85rem;
-      color: var(--purple-100);
-      backdrop-filter: blur(8px);
-    }
-
-    .hero__badge img {
-      width: 36px;
-      height: 36px;
-      flex-shrink: 0;
+    @media (max-width:720px){
+      .slide{padding:42px 26px 106px;min-height:380px}
+      .showcase-nav{left:26px;right:26px;bottom:24px}
+      .arrow{width:40px;height:40px}
     }
 
     /* ============================================================
        SECTIONS
        ============================================================ */
-    .section {
-      padding: 100px 0;
-      position: relative;
+    .section{padding:100px 0;position:relative}
+    .section--alt{
+      background:linear-gradient(180deg,transparent,#F9EEF5 50%,transparent);
     }
-
-    .section--alt {
-      background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.06) 50%, transparent);
+    .section__head{max-width:720px;margin-bottom:60px}
+    .section__head--center{margin-inline:auto;text-align:center}
+    .section__title{
+      font-size:clamp(1.75rem,3.6vw,2.6rem);
+      font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:18px;
+      color:var(--plum-900);
     }
-
-    .section__head {
-      max-width: 720px;
-      margin-bottom: 60px;
+    .section__lead{
+      font-size:1.04rem;color:var(--text-muted);max-width:62ch;
     }
-
-    .section__head--center {
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    .section__title {
-      font-size: clamp(1.8rem, 3.6vw, 2.7rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-    }
-
-    .section__lead {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 60ch;
-    }
-
-    .section__head--center .section__lead {
-      margin-inline: auto;
-    }
-
-    .section__lead em {
-      color: var(--purple-300);
-      font-style: italic;
-    }
+    .section__head--center .section__lead{margin-inline:auto}
+    .section__lead em{color:var(--plum-600);font-style:italic}
 
     /* Grids */
-    .grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .grid--3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid--2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .grid{display:grid;gap:24px}
+    .grid--4{grid-template-columns:repeat(4,1fr)}
+    .grid--3{grid-template-columns:repeat(3,1fr)}
+    .grid--2{grid-template-columns:repeat(2,1fr)}
 
     /* Cards */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease,
-        box-shadow 0.25s ease;
-      backdrop-filter: blur(8px);
+    .card{
+      background:var(--bg-card);border:1px solid var(--border);
+      border-radius:var(--radius-lg);padding:32px 28px;
+      box-shadow:var(--shadow-sm);
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
+    .card:hover{
+      transform:translateY(-6px);border-color:var(--border-strong);
+      box-shadow:0 26px 55px -30px rgba(142,42,107,.5);
+    }
+    .card__icon{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:52px;height:52px;border-radius:14px;margin-bottom:22px;
+      background:linear-gradient(135deg,var(--plum-600),var(--plum-400));
+      color:#fff;
+      box-shadow:0 14px 26px -14px rgba(142,42,107,.75);
+    }
+    .card__icon svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .card__title{font-size:1.12rem;font-weight:700;margin-bottom:10px;letter-spacing:-.015em;color:var(--plum-800)}
+    .card__text{font-size:.93rem;color:var(--text-muted)}
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-strong);
-      background: var(--bg-card-hover);
-      box-shadow: 0 24px 50px -30px rgba(124, 58, 237, 0.6);
+    /* Flow */
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .flow-step{
+      background:#fff;border:1px solid var(--border);
+      border-radius:var(--radius);padding:26px 20px;text-align:center;
+      box-shadow:var(--shadow-sm);
+      transition:transform .25s,border-color .25s,box-shadow .25s;
     }
+    .flow-step:hover{
+      transform:translateY(-6px);border-color:var(--border-strong);
+      box-shadow:0 26px 55px -30px rgba(142,42,107,.5);
+    }
+    .flow-num{
+      width:38px;height:38px;margin:0 auto 16px;border-radius:12px;
+      display:grid;place-items:center;font-weight:800;font-size:.85rem;
+      background:var(--plum-100);
+      border:1px solid var(--border-strong);color:var(--plum-700);
+    }
+    .flow-step h4{font-size:1rem;margin-bottom:8px;font-weight:700;letter-spacing:-.01em;color:var(--plum-800)}
+    .flow-step p{font-size:.84rem;color:var(--text-muted);line-height:1.55}
 
-    .card__icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(139, 92, 246, 0.1));
-      border: 1px solid var(--border-strong);
-      margin-bottom: 22px;
-      color: var(--purple-300);
+    /* Chips */
+    .chips{display:flex;flex-wrap:wrap;gap:12px}
+    .chip{
+      display:inline-flex;align-items:center;gap:10px;
+      background:#fff;border:1px solid var(--border);
+      border-radius:999px;padding:11px 20px;
+      font-size:.9rem;font-weight:500;color:var(--plum-800);
+      box-shadow:var(--shadow-sm);
+      transition:transform .2s,border-color .2s,background .2s;
     }
-
-    .card__icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .card__title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.015em;
-    }
-
-    .card__text {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-    }
-
-    /* Stats */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 70px;
-      padding: 36px 28px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      backdrop-filter: blur(8px);
-    }
-
-    .stat {
-      text-align: center;
-      position: relative;
-    }
-
-    .stat + .stat::before {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 15%;
-      height: 70%;
-      width: 1px;
-      background: var(--border);
-    }
-
-    .stat__value {
-      display: block;
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      background: linear-gradient(135deg, var(--white), var(--purple-300));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .stat__label {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-weight: 500;
-    }
-
-    /* Split layout */
-    .split {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .split__title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    .split__text {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-    }
-
-    .split__text strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .split__aside {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* Compare */
-    .compare {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 26px 0;
-    }
-
-    .compare__col {
-      padding: 22px 20px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .compare__col--git {
-      border-left: 3px solid var(--purple-400);
-    }
-
-    .compare__col--hub {
-      border-left: 3px solid var(--white);
-    }
-
-    .compare__title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .compare__col--git .compare__title {
-      color: var(--purple-300);
-    }
-
-    .compare__col--hub .compare__title {
-      color: var(--white);
-    }
-
-    .compare__list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .compare__list li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      padding-left: 18px;
-      position: relative;
-    }
-
-    .compare__list li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--purple-400);
-      font-size: 0.8rem;
-    }
-
-    /* Snippet */
-    .snippet {
-      background: rgba(10, 5, 18, 0.85);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius);
-      overflow: hidden;
-      backdrop-filter: blur(8px);
-    }
-
-    .snippet__bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .snippet__lang {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--purple-300);
-      letter-spacing: 0.02em;
-    }
-
-    .snippet__copy {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-dim);
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-    }
-
-    .snippet__copy:hover {
-      color: var(--white);
-      border-color: var(--purple-400);
-      background: rgba(124, 58, 237, 0.15);
-    }
-
-    .snippet__copy.is-copied {
-      color: var(--purple-200);
-      border-color: var(--purple-400);
-      background: rgba(124, 58, 237, 0.25);
-    }
-
-    .snippet__pre {
-      padding: 20px;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      line-height: 1.8;
-      color: var(--purple-100);
-      overflow-x: auto;
-      white-space: pre;
-      margin: 0;
-    }
+    .chip:hover{transform:translateY(-3px);border-color:var(--plum-400);background:var(--plum-50)}
+    .chip .ic{width:15px;height:15px;color:var(--plum-500);flex-shrink:0}
 
     /* Callout */
-    .callout {
-      padding: 24px 26px;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(139, 92, 246, 0.05));
-      border: 1px solid var(--border-strong);
+    .callout{
+      padding:26px 30px;border-radius:var(--radius);
+      background:var(--plum-100);
+      border:1px solid var(--border-strong);
     }
+    .callout__title{font-size:.98rem;font-weight:700;margin-bottom:10px;color:var(--plum-700)}
+    .callout__text{font-size:.94rem;color:var(--text-muted)}
+    .callout__text strong{color:var(--plum-700);font-weight:700}
 
-    .callout__title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--purple-200);
+    /* Phase */
+    .phase{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;
+      padding:40px;border-radius:26px;
+      background:#fff;
+      border:1px solid var(--border-strong);
+      box-shadow:var(--shadow);
+      position:relative;
     }
-
-    .callout__text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+    .phase::before{
+      content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;
+      background:
+        radial-gradient(400px 200px at 90% -20%,rgba(206,116,174,.18),transparent 70%);
     }
-
-    .callout__text strong {
-      color: var(--white);
-      font-weight: 600;
+    .phase > *{position:relative}
+    .phase__badge{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:7px 16px;border-radius:999px;
+      background:linear-gradient(135deg,var(--plum-600),var(--plum-500));
+      color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.14em;
+      text-transform:uppercase;margin-bottom:16px;
+      box-shadow:0 12px 24px -12px rgba(142,42,107,.85);
     }
+    .phase h3{font-size:1.4rem;margin-bottom:12px;letter-spacing:-.02em;color:var(--plum-800)}
+    .phase p{color:var(--text-muted);font-size:.96rem}
+    .phase p strong{color:var(--plum-700);font-weight:700}
 
-    /* Guide cards (replacing class cards) */
-    .guide-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 30px 26px;
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease,
-        box-shadow 0.25s ease;
-      backdrop-filter: blur(8px);
-      display: flex;
-      flex-direction: column;
+    /* Philosophy */
+    .philo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .philo-item{
+      position:relative;background:#fff;border:1px solid var(--border);
+      border-radius:var(--radius);padding:26px;
+      box-shadow:var(--shadow-sm);
+      transition:transform .25s,border-color .25s,box-shadow .25s;
     }
-
-    .guide-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-strong);
-      background: var(--bg-card-hover);
-      box-shadow: 0 24px 50px -30px rgba(124, 58, 237, 0.6);
+    .philo-item:hover{transform:translateY(-5px);border-color:var(--border-strong);box-shadow:0 22px 48px -30px rgba(142,42,107,.5)}
+    .philo-item .n{
+      font-size:.7rem;font-weight:800;letter-spacing:.2em;
+      color:var(--plum-500);display:block;margin-bottom:12px;
     }
+    .philo-item h4{font-size:1.02rem;margin-bottom:8px;letter-spacing:-.01em;color:var(--plum-800)}
+    .philo-item p{font-size:.87rem;color:var(--text-muted)}
 
-    .guide-card__title {
-      font-size: 1.12rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.015em;
+    /* Metrics */
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .metric{
+      display:flex;gap:14px;align-items:flex-start;
+      background:#fff;border:1px solid var(--border);
+      border-radius:14px;padding:18px 20px;
+      font-size:.92rem;font-weight:500;color:var(--plum-800);
+      box-shadow:var(--shadow-sm);
+      transition:transform .2s,border-color .2s,box-shadow .2s;
     }
+    .metric:hover{transform:translateY(-3px);border-color:var(--plum-400);box-shadow:0 20px 44px -28px rgba(142,42,107,.5)}
+    .metric .ic{width:18px;height:18px;color:var(--plum-500);margin-top:3px;flex-shrink:0}
 
-    .guide-card__text {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      flex: 1;
+    .measure{
+      margin-top:36px;border-radius:26px;padding:48px 36px;text-align:center;color:#fff;
+      background:
+        radial-gradient(500px 260px at 12% -10%,rgba(240,201,227,.35),transparent 65%),
+        linear-gradient(140deg,#8E2A6B,#B84A8E 60%,#CE74AE);
+      box-shadow:0 30px 60px -30px rgba(142,42,107,.65);
     }
-
-    .guide-card__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
+    .measure .tag{
+      font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--plum-100);display:block;margin-bottom:18px;
     }
-
-    .guide-card__tags li {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--purple-300);
-      padding: 5px 11px;
-      border-radius: 999px;
-      background: rgba(124, 58, 237, 0.12);
-      border: 1px solid var(--border);
+    .measure p.big{
+      font-size:clamp(1.1rem,2.4vw,1.55rem);font-weight:700;
+      letter-spacing:-.02em;line-height:1.5;max-width:64ch;margin:0 auto;
     }
 
     /* CTA */
-    .cta {
-      text-align: center;
-      max-width: 680px;
-      margin-inline: auto;
-      padding: 70px 40px;
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(124, 58, 237, 0.16), rgba(124, 58, 237, 0.02));
-      border: 1px solid var(--border-strong);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow-purple);
+    .cta{
+      text-align:center;max-width:720px;margin-inline:auto;
+      padding:70px 40px;border-radius:32px;
+      background:
+        radial-gradient(400px 220px at 50% 0%,rgba(240,201,227,.6),transparent 70%),
+        #fff;
+      border:1px solid var(--border-strong);
+      box-shadow:0 30px 70px -34px rgba(142,42,107,.5);
     }
-
-    .cta__logo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 24px;
-      filter: drop-shadow(0 10px 30px rgba(124, 58, 237, 0.6));
+    .cta__logo{
+      width:88px;height:88px;margin:0 auto 24px;border-radius:22px;
+      box-shadow:0 18px 40px -18px rgba(142,42,107,.75),0 0 0 1px rgba(142,42,107,.1);
     }
-
-    .cta__title {
-      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 14px;
+    .cta__title{
+      font-size:clamp(1.55rem,3.2vw,2.25rem);
+      font-weight:800;letter-spacing:-.03em;margin-bottom:14px;color:var(--plum-900);
     }
-
-    .cta__text {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-    }
-
-    .cta__actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+    .cta__text{font-size:1.02rem;color:var(--text-muted);margin-bottom:32px}
+    .cta__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
 
     /* ============================================================
        FOOTER
        ============================================================ */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      background: rgba(10, 5, 18, 0.6);
-      padding-top: 60px;
-      position: relative;
-      z-index: 1;
+    .site-footer{
+      border-top:1px solid var(--border);
+      background:#F9EEF5;
+      padding-top:60px;position:relative;z-index:1;
     }
-
-    .site-footer__inner {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 40px;
-      padding-bottom: 50px;
+    .site-footer__inner{
+      display:grid;grid-template-columns:1.4fr 1fr;gap:40px;padding-bottom:50px;
     }
-
-    .site-footer__brand .brand {
-      margin-bottom: 18px;
+    .site-footer__brand .brand{margin-bottom:18px}
+    .site-footer__blurb{font-size:.9rem;color:var(--text-muted);max-width:38ch}
+    .site-footer__nav{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .site-footer__heading{
+      font-size:.78rem;font-weight:700;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--plum-600);margin-bottom:16px;
     }
-
-    .site-footer__blurb {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      max-width: 36ch;
-    }
-
-    .site-footer__nav {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .site-footer__heading {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--purple-400);
-      margin-bottom: 16px;
-    }
-
-    .site-footer__list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .site-footer__list a {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .site-footer__list a:hover {
-      color: var(--white);
-    }
-
-    .site-footer__bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 26px 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      flex-wrap: wrap;
+    .site-footer__list{display:flex;flex-direction:column;gap:10px}
+    .site-footer__list a{font-size:.9rem;color:var(--text-muted);transition:color .2s}
+    .site-footer__list a:hover{color:var(--plum-700)}
+    .site-footer__bottom{
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:26px 24px;border-top:1px solid var(--border);
+      font-size:.82rem;color:var(--text-dim);flex-wrap:wrap;
     }
 
     /* ============================================================
-       REVEAL ANIMATION
+       REVEAL
        ============================================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    .reveal{
+      opacity:0;transform:translateY(24px);
+      transition:opacity .7s cubic-bezier(.22,1,.36,1),
+                 transform .7s cubic-bezier(.22,1,.36,1);
     }
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
 
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-      .bg-atmosphere__orb {
-        animation: none;
-      }
-      html {
-        scroll-behavior: auto;
-      }
+    @media (prefers-reduced-motion:reduce){
+      .reveal{opacity:1;transform:none;transition:none}
+      .bg-atmosphere__orb{animation:none}
+      html{scroll-behavior:auto}
+      .dot,.slides{transition:none}
     }
 
     /* ============================================================
        RESPONSIVE
        ============================================================ */
-    @media (max-width: 1024px) {
-      .hero__inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .split {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .grid--3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .site-footer__inner {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:1080px){
+      .grid--4{grid-template-columns:repeat(2,1fr)}
+      .flow{grid-template-columns:repeat(3,1fr)}
+      .philo{grid-template-columns:repeat(2,1fr)}
+      .metrics{grid-template-columns:repeat(2,1fr)}
     }
 
-    @media (max-width: 860px) {
-      .nav {
-        position: fixed;
-        inset: 76px 0 auto 0;
-        background: rgba(10, 5, 18, 0.98);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        padding: 20px 24px 28px;
-        transform: translateY(-120%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease,
-          visibility 0.35s;
-      }
-
-      .nav.is-open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .nav__list {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-      }
-
-      .nav__link {
-        display: block;
-        padding: 12px 16px;
-        font-size: 1rem;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .site-header__cta {
-        display: none;
-      }
-
-      .hero {
-        padding: 50px 0 70px;
-      }
-
-      .hero__meta {
-        gap: 28px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-
-      .stat + .stat::before {
-        display: none;
-      }
-
-      .grid--2,
-      .grid--3 {
-        grid-template-columns: 1fr;
-      }
-
-      .compare {
-        grid-template-columns: 1fr;
-      }
-
-      .cta {
-        padding: 50px 24px;
-      }
-
-      .site-footer__bottom {
-        flex-direction: column;
-        text-align: center;
-      }
+    @media (max-width:1024px){
+      .hero__inner{grid-template-columns:1fr;gap:50px}
+      .phase{grid-template-columns:1fr;gap:26px}
+      .grid--3{grid-template-columns:repeat(2,1fr)}
+      .site-footer__inner{grid-template-columns:1fr}
     }
 
-    @media (max-width: 480px) {
-      .container {
-        padding-inline: 18px;
+    @media (max-width:860px){
+      .nav{
+        position:fixed;inset:78px 0 auto 0;
+        background:rgba(253,250,251,.99);
+        backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--border);
+        padding:20px 24px 28px;
+        transform:translateY(-120%);opacity:0;visibility:hidden;
+        transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .35s ease,visibility .35s;
+        box-shadow:0 20px 40px -24px rgba(142,42,107,.35);
       }
+      .nav.is-open{transform:translateY(0);opacity:1;visibility:visible}
+      .nav__list{flex-direction:column;align-items:stretch;gap:6px}
+      .nav__link{display:block;padding:12px 16px;font-size:1rem}
+      .nav-toggle{display:flex}
+      .site-header__cta{display:none}
 
-      .hero__actions .btn {
-        width: 100%;
-      }
+      .hero{padding:50px 0 70px}
+      .hero__meta{gap:28px}
+      .grid--2,.grid--3,.grid--4{grid-template-columns:1fr}
+      .flow{grid-template-columns:repeat(2,1fr)}
+      .philo{grid-template-columns:1fr}
+      .metrics{grid-template-columns:1fr}
+      .cta{padding:50px 24px}
+      .site-footer__bottom{flex-direction:column;text-align:center}
+    }
 
-      .hero__meta {
-        gap: 22px;
-      }
-
-      .brand__tag {
-        font-size: 0.6rem;
-      }
+    @media (max-width:480px){
+      .container{padding-inline:18px}
+      .hero__actions .btn{width:100%}
+      .cta__actions .btn{width:100%}
+      .flow{grid-template-columns:1fr}
+      .brand__tag{font-size:.55rem}
     }
   </style>
 </head>
 
 <body id="top">
 
-  <!-- ============================================================
-       BACKGROUND ATMOSPHERE
-       ============================================================ -->
+  <!-- BACKGROUND -->
   <div class="bg-atmosphere" aria-hidden="true">
     <span class="bg-atmosphere__orb bg-atmosphere__orb--one"></span>
     <span class="bg-atmosphere__orb bg-atmosphere__orb--two"></span>
@@ -1262,7 +693,6 @@
   </div>
   <div class="bg-grid" aria-hidden="true"></div>
 
-  <!-- Skip link -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
@@ -1271,32 +701,26 @@
   <header class="site-header" id="siteHeader">
     <div class="container site-header__inner">
 
-      <a class="brand" href="#top" aria-label="Protocol Color Purple and White — home">
-        <!-- Inline logo: purple shield with white keyhole -->
-        <svg class="brand__logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M32 4 8 14v18c0 16 10.7 29.3 24 32 13.3-2.7 24-16 24-32V14L32 4z" fill="#7C3AED" stroke="#A78BFA" stroke-width="2.5"/>
-          <circle cx="32" cy="30" r="9" fill="#FFFFFF"/>
-          <rect x="29" y="36" width="6" height="12" rx="2" fill="#FFFFFF"/>
-          <path d="M20 20l4 4M44 20l-4 4M20 44l4-4M44 44l-4-4" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.6"/>
-        </svg>
+      <a class="brand" href="#top" aria-label="The Purpose Protocol — home">
+        <img class="brand__logo" src="logo.png" alt="The Purpose Protocol logo" onerror="this.style.visibility='hidden'" />
         <span class="brand__text">
-          <span class="brand__name">Protocol</span>
-          <span class="brand__tag">Color Purple &amp; White</span>
+          <span class="brand__name">The Purpose Protocol</span>
+          <span class="brand__tag">Talent Incubator</span>
         </span>
       </a>
 
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="#github">What is GitHub</a></li>
-          <li class="nav__item"><a class="nav__link" href="#guides">Guides</a></li>
-          <li class="nav__item"><a class="nav__link" href="#toolkit">Toolkit</a></li>
-          <li class="nav__item"><a class="nav__link" href="#join">Join</a></li>
+          <li><a class="nav__link" href="#vision">Vision</a></li>
+          <li><a class="nav__link" href="#flow">How it works</a></li>
+          <li><a class="nav__link" href="#who">Who it's for</a></li>
+          <li><a class="nav__link" href="#philosophy">Philosophy</a></li>
+          <li><a class="nav__link" href="#metrics">Metrics</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn--primary site-header__cta" href="#join">
-        Join the Protocol
+      <a class="btn btn--wa site-header__cta" href="https://chat.whatsapp.com/IMDRyGtlf6E3kGmjJ1Q8Vx?mode=gi_t" target="_blank" rel="noopener">
+        Join Community
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open menu">
@@ -1319,44 +743,39 @@
         <div class="hero__content">
           <p class="pill reveal">
             <span class="pill__dot" aria-hidden="true"></span>
-            Cybersecurity Community &amp; GitHub Education
+            Talent Incubator Hub &amp; Ecosystem
           </p>
 
           <h1 class="hero__title reveal" id="heroTitle">
-            Document your <span class="text-gradient">work</span>.<br />
-            Build your <span class="text-gradient">proof</span>.
+            Ideation isn't the problem.<br />
+            <span class="text-gradient">Execution is.</span>
           </h1>
 
           <p class="hero__lead reveal">
-            Protocol Color Purple and White is a cybersecurity community where defenders,
-            analysts and pentesters learn to use <strong>Git</strong> and <strong>GitHub</strong>
-            the way professionals do — to version, document and showcase every project,
-            lab, CTF and engagement.
+            We build passionate individuals with the <strong>skills</strong>,
+            <strong>practical experience</strong> and <strong>collaborative
+            environment</strong> required to solve real-world problems — and to build
+            globally relevant solutions.
           </p>
 
           <div class="hero__actions reveal">
-            <a class="btn btn--primary" href="#guides">
-              Explore GitHub Guides
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <a class="btn btn--wa" href="https://chat.whatsapp.com/IMDRyGtlf6E3kGmjJ1Q8Vx?mode=gi_t" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              Join the WhatsApp Community
             </a>
-            <a class="btn btn--ghost" href="#github">
-              What is GitHub?
+            <a class="btn btn--ghost" href="#flow">
+              See how it works
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </div>
 
           <ul class="hero__meta reveal">
-            <li class="hero__meta-item">
-              <strong>10+</strong>
-              <span>Guides &amp; resources</span>
-            </li>
-            <li class="hero__meta-item">
-              <strong>100%</strong>
-              <span>Free &amp; open</span>
-            </li>
-            <li class="hero__meta-item">
-              <strong>0 → Pro</strong>
-              <span>No experience needed</span>
-            </li>
+            <li class="hero__meta-item"><strong>4</strong><span>Core disciplines</span></li>
+            <li class="hero__meta-item"><strong>5</strong><span>Execution stages</span></li>
+            <li class="hero__meta-item"><strong>7</strong><span>Principles</span></li>
+            <li class="hero__meta-item"><strong>∞</strong><span>Problems to solve</span></li>
           </ul>
         </div>
 
@@ -1367,25 +786,24 @@
               <span class="terminal__dot terminal__dot--red" aria-hidden="true"></span>
               <span class="terminal__dot terminal__dot--amber" aria-hidden="true"></span>
               <span class="terminal__dot terminal__dot--green" aria-hidden="true"></span>
-              <span class="terminal__title">pcpw@protocol: ~/security-notes</span>
+              <span class="terminal__title">builder@protocol: ~/purpose-protocol</span>
             </div>
-            <pre class="terminal__body"><code class="terminal__code" id="terminalCode">$ mkdir protocol-notes && cd protocol-notes
-$ git init
-Initialized empty Git repository ✔
-$ git add .
-$ git commit -m "docs: add nmap scan for lab-01"
-$ git push origin main
-→ pushed to github.com/protocol-color-purple-and-white</code><span class="terminal__caret" aria-hidden="true"></span></pre>
+            <pre class="terminal__body"><code class="terminal__code" id="terminalCode">$ protocol init --vision
+→ talent incubator hub initialized ✔
+
+$ protocol run learn build solve deliver
+[1/5] learn ......... filling the knowledge bank
+[2/5] build ......... withdrawing from the bank
+[3/5] solve ......... attacking a real problem
+[4/5] deliver ....... shipping to the real world
+[5/5] create value .. unlocking impact
+
+✔ builder capability unlocked</code><span class="terminal__caret" aria-hidden="true"></span></pre>
           </div>
 
           <div class="hero__badge">
-            <!-- Inline logo small -->
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="36" height="36">
-              <path d="M32 4 8 14v18c0 16 10.7 29.3 24 32 13.3-2.7 24-16 24-32V14L32 4z" fill="#7C3AED" stroke="#A78BFA" stroke-width="2.5"/>
-              <circle cx="32" cy="30" r="9" fill="#FFFFFF"/>
-              <rect x="29" y="36" width="6" height="12" rx="2" fill="#FFFFFF"/>
-            </svg>
-            <span>Every project you touch deserves a repository.</span>
+            <img src="logo.png" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+            <span>We are training individuals to become <strong>executors</strong>.</span>
           </div>
         </div>
 
@@ -1393,19 +811,108 @@ $ git push origin main
     </section>
 
     <!-- ============================================================
-         ABOUT
+         SLIDESHOW
          ============================================================ -->
-    <section class="section" id="about" aria-labelledby="aboutTitle">
+    <section class="showcase" aria-label="Highlights">
+      <div class="container">
+        <div class="showcase__inner" id="slideshow" aria-roledescription="carousel" aria-label="The Purpose Protocol highlights">
+          <div class="slides" id="slides">
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+              <span class="eyebrow">Our Vision</span>
+              <h3>A talent incubator hub and ecosystem.</h3>
+              <p>
+                A place where skilled people are nurtured and developed through real-world
+                problem identification and solving — where the resulting talent is
+                mobilized to deliver solutions to real clients.
+              </p>
+              <p><strong>The end goal:</strong> build global relevance as the shapers of the next generation of innovators.</p>
+            </article>
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+              <span class="eyebrow">Our Mission</span>
+              <h3>Build skilled individuals, scale innovation and digital creativity.</h3>
+              <ul>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Practical, project-based learning</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Real-world problem identification &amp; solving</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Multidisciplinary collaboration</li>
+              </ul>
+            </article>
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+              <span class="eyebrow">The Gap We Close</span>
+              <h3>The gap between knowledge acquisition and capability building.</h3>
+              <p>
+                Ideation isn't the problem — execution is. We train individuals to become
+                <strong>executors</strong>: people who can take an ambiguous problem and
+                deliver something real.
+              </p>
+            </article>
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+              <span class="eyebrow">Core Areas</span>
+              <h3>Four disciplines, one multidisciplinary environment.</h3>
+              <ul>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Artificial Intelligence</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cybersecurity</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Governance</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Business &amp; Economics</li>
+              </ul>
+            </article>
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+              <span class="eyebrow">What You Gain</span>
+              <h3>Evidence of capability — not just certificates.</h3>
+              <ul>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Portfolio development</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Exposure to industry problems</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Real client engagements</li>
+                <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A culture of excellence &amp; ownership</li>
+              </ul>
+            </article>
+
+            <article class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+              <span class="eyebrow">The Ultimate Measure</span>
+              <h3>Can you create value independently?</h3>
+              <p>
+                Can someone join The Purpose Protocol, develop their capabilities, build
+                something meaningful — and leave with the ability to create value
+                independently?
+              </p>
+            </article>
+
+          </div>
+
+          <div class="showcase-nav">
+            <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+            <div class="arrows">
+              <button class="arrow" id="prev" type="button" aria-label="Previous slide">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg>
+              </button>
+              <button class="arrow" id="next" type="button" aria-label="Next slide">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VISION / MISSION
+         ============================================================ -->
+    <section class="section" id="vision" aria-labelledby="visionTitle">
       <div class="container">
 
         <header class="section__head reveal">
           <p class="eyebrow">Who we are</p>
-          <h2 class="section__title" id="aboutTitle">
-            A purple &amp; white protocol for the people who defend the internet.
+          <h2 class="section__title" id="visionTitle">
+            A talent incubator for people who build, not just talk.
           </h2>
           <p class="section__lead">
-            We are a community first, an education hub second. Everything we share is built around
-            one principle: <em>if it isn't documented, it didn't happen.</em>
+            We nurture skilled individuals through real-world problem identification,
+            solving and delivery — then mobilize that talent to serve real clients.
+            <em>The end goal is global relevance.</em>
           </p>
         </header>
 
@@ -1413,12 +920,12 @@ $ git push origin main
 
           <article class="card reveal">
             <span class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 10.5 4.6-1.2 8-5.5 8-10.5V5l-8-3z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 10.5 4.6-1.2 8-5.5 8-10.5V5l-8-3z"/><path d="M9.4 12.1l1.9 1.9 3.5-3.7"/></svg>
             </span>
-            <h3 class="card__title">Security-first mindset</h3>
+            <h3 class="card__title">Execution over ideation</h3>
             <p class="card__text">
-              From secret scanning to signed commits, we teach the habits that keep your
-              work — and your employer — safe on public platforms.
+              Ideas are cheap. We train people to become executors — the ones who
+              take an ambiguous problem and ship something that actually works.
             </p>
           </article>
 
@@ -1426,10 +933,10 @@ $ git push origin main
             <span class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H20z"/></svg>
             </span>
-            <h3 class="card__title">Documentation as a skill</h3>
+            <h3 class="card__title">Capability, not certificates</h3>
             <p class="card__text">
-              Write-ups, engagement reports, methodology notes and READMEs — the artifacts
-              that turn a hobby into a career.
+              Portfolios, real client engagements and deployed projects are the
+              evidence. We measure what you can do — not what you attended.
             </p>
           </article>
 
@@ -1437,305 +944,352 @@ $ git push origin main
             <span class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </span>
-            <h3 class="card__title">Community over clout</h3>
+            <h3 class="card__title">Multidisciplinary by design</h3>
             <p class="card__text">
-              Review each other's repositories, pair on labs, and grow together.
-              Everyone starts somewhere.
+              AI, cybersecurity, governance and business thinking — together.
+              The hardest real-world problems never live inside one discipline.
             </p>
           </article>
 
         </div>
-
-        <!-- Stats -->
-        <div class="stats reveal">
-          <div class="stat">
-            <span class="stat__value">10+</span>
-            <span class="stat__label">Guides &amp; resources</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">40+</span>
-            <span class="stat__label">Hands-on labs</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">24/7</span>
-            <span class="stat__label">Community support</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">∞</span>
-            <span class="stat__label">Repositories to build</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- ============================================================
-         WHAT IS GITHUB
+         FLOW
          ============================================================ -->
-    <section class="section section--alt" id="github" aria-labelledby="githubTitle">
+    <section class="section section--alt" id="flow" aria-labelledby="flowTitle">
       <div class="container">
 
         <header class="section__head section__head--center reveal">
-          <p class="eyebrow">Foundations</p>
-          <h2 class="section__title" id="githubTitle">What is GitHub?</h2>
+          <p class="eyebrow">What we're doing</p>
+          <h2 class="section__title" id="flowTitle">
+            Learn → Build → Solve → Deliver → Create Value
+          </h2>
           <p class="section__lead">
-            Before you can document anything, you need to understand the two tools
-            everyone confuses: <strong>Git</strong> and <strong>GitHub</strong>.
+            A continuous cycle that turns knowledge into capability, and capability
+            into real-world value.
           </p>
         </header>
 
-        <div class="split">
-
-          <div class="split__body reveal">
-            <h3 class="split__title">Git is the tool. GitHub is the place.</h3>
-            <p class="split__text">
-              <strong>Git</strong> is a version control system that runs on your machine.
-              It records snapshots of your files so you can travel back in time, branch off
-              experiments, and collaborate without overwriting each other's work.
-            </p>
-            <p class="split__text">
-              <strong>GitHub</strong> is a cloud platform that hosts Git repositories.
-              It adds a social layer — profiles, issues, pull requests, code review,
-              automation, and a portfolio that recruiters can actually read.
-            </p>
-
-            <div class="compare">
-              <div class="compare__col compare__col--git">
-                <h4 class="compare__title">Git</h4>
-                <ul class="compare__list">
-                  <li>Runs locally on your machine</li>
-                  <li>Tracks changes &amp; history</li>
-                  <li>Works completely offline</li>
-                  <li>No account required</li>
-                </ul>
-              </div>
-              <div class="compare__col compare__col--hub">
-                <h4 class="compare__title">GitHub</h4>
-                <ul class="compare__list">
-                  <li>Hosts repositories in the cloud</li>
-                  <li>Issues, PRs, reviews, Actions</li>
-                  <li>Collaboration &amp; visibility</li>
-                  <li>Free for public &amp; private work</li>
-                </ul>
-              </div>
-            </div>
-
-            <p class="split__text">
-              In cybersecurity, this matters because your <strong>methodology</strong>,
-              your <strong>findings</strong> and your <strong>remediation advice</strong>
-              all need a traceable history. Git gives you that traceability. GitHub gives
-              it a home.
-            </p>
+        <div class="flow">
+          <div class="flow-step reveal">
+            <div class="flow-num">01</div>
+            <h4>Learn</h4>
+            <p>Fill up your knowledge bank with fundamentals that actually matter.</p>
           </div>
+          <div class="flow-step reveal">
+            <div class="flow-num">02</div>
+            <h4>Build</h4>
+            <p>Withdraw from the bank — apply what you have learnt to something real.</p>
+          </div>
+          <div class="flow-step reveal">
+            <div class="flow-num">03</div>
+            <h4>Solve</h4>
+            <p>Identify and attack ambiguous, real-world problems.</p>
+          </div>
+          <div class="flow-step reveal">
+            <div class="flow-num">04</div>
+            <h4>Deliver</h4>
+            <p>Ship something that can function in a real-world environment.</p>
+          </div>
+          <div class="flow-step reveal">
+            <div class="flow-num">05</div>
+            <h4>Create Value</h4>
+            <p>Explore and unlock the value available within built solutions.</p>
+          </div>
+        </div>
 
-          <aside class="split__aside reveal">
-            <div class="snippet">
-              <div class="snippet__bar">
-                <span class="snippet__lang">bash · first-time setup</span>
-                <button class="snippet__copy" type="button" data-copy>Copy</button>
-              </div>
-              <pre class="snippet__pre"><code># 1. Tell Git who you are
-git config --global user.name  "Your Name"
-git config --global user.email "you@example.com"
-
-# 2. Create a repository in the current folder
-git init
-
-# 3. Stage everything and commit
-git add .
-git commit -m "chore: initial commit"
-
-# 4. Connect to GitHub and push
-git remote add origin git@github.com:USER/REPO.git
-git branch -M main
-git push -u origin main</code></pre>
-            </div>
-
-            <div class="callout">
-              <h4 class="callout__title">Pro tip for security folks</h4>
-              <p class="callout__text">
-                Always authenticate with an <strong>SSH key</strong> or a
-                <strong>personal access token</strong> — never with your password.
-                GitHub removed password authentication for Git operations in 2021.
-              </p>
-            </div>
-          </aside>
-
+        <div class="callout reveal" style="margin-top:36px;text-align:center;max-width:720px;margin-inline:auto">
+          <p class="callout__text">
+            <strong>Secure, Govern and Validate</strong> run through every single step — not after it.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         GUIDES (replacing curriculum)
+         THE GAP
          ============================================================ -->
-    <section class="section" id="guides" aria-labelledby="guidesTitle">
+    <section class="section" aria-labelledby="gapTitle">
       <div class="container">
 
         <header class="section__head reveal">
-          <p class="eyebrow">Learn at your own pace</p>
-          <h2 class="section__title" id="guidesTitle">GitHub for Cybersecurity Professionals</h2>
+          <p class="eyebrow">The gap we close</p>
+          <h2 class="section__title" id="gapTitle">What people struggle with every day</h2>
           <p class="section__lead">
-            Practical guides to help you document, secure and showcase your security work.
+            Knowledge is everywhere. Capability is rare. The Purpose Protocol exists
+            to close the gap between acquiring knowledge and being able to actually
+            do the work.
           </p>
         </header>
 
-        <div class="grid grid--3">
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Foundations: Git vs GitHub</h3>
-            <p class="guide-card__text">
-              What version control is, why it exists, and how to install and configure Git
-              on Linux, macOS and Windows.
-            </p>
-            <ul class="guide-card__tags">
-              <li>git init</li><li>config</li><li>CLI</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Your Professional Identity</h3>
-            <p class="guide-card__text">
-              Build a profile README that reads like a résumé, enable 2FA, generate SSH keys
-              and sign your commits with GPG.
-            </p>
-            <ul class="guide-card__tags">
-              <li>SSH</li><li>2FA</li><li>GPG</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Repositories &amp; Structure</h3>
-            <p class="guide-card__text">
-              Naming conventions, folder layouts for pentest reports, lab notes and tooling,
-              plus .gitignore rules that stop you leaking secrets.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Structure</li><li>.gitignore</li><li>Licences</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Documenting with Markdown</h3>
-            <p class="guide-card__text">
-              Write READMEs, tables, code blocks, callouts, Mermaid diagrams and
-              report templates that render beautifully on GitHub.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Markdown</li><li>Mermaid</li><li>Templates</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Branches, Commits &amp; Pull Requests</h3>
-            <p class="guide-card__text">
-              A commit-message convention for security work, branching strategies, and
-              using PRs to review your own findings before publishing.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Branching</li><li>PRs</li><li>Reviews</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Documenting a Pentest or CTF</h3>
-            <p class="guide-card__text">
-              Turn a Hack The Box machine or a client engagement into a sanitised,
-              portfolio-ready repository with evidence and remediation.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Reports</li><li>Evidence</li><li>Sanitising</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">GitHub Security Features</h3>
-            <p class="guide-card__text">
-              Secret scanning, push protection, Dependabot, CodeQL code scanning and
-              security advisories — configured on your own repos.
-            </p>
-            <ul class="guide-card__tags">
-              <li>CodeQL</li><li>Dependabot</li><li>Scanning</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Automation with GitHub Actions</h3>
-            <p class="guide-card__text">
-              Schedule recon jobs, run linters and secret scanners, and publish reports
-              automatically every time you push.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Actions</li><li>CI/CD</li><li>Cron</li>
-            </ul>
-          </article>
-
-          <article class="guide-card reveal">
-            <h3 class="guide-card__title">Portfolio &amp; GitHub Pages</h3>
-            <p class="guide-card__text">
-              Ship a personal site for free, pin your best repositories, and write a
-              profile that hiring managers actually stop to read.
-            </p>
-            <ul class="guide-card__tags">
-              <li>Pages</li><li>Portfolio</li><li>Branding</li>
-            </ul>
-          </article>
-
+        <div class="chips reveal">
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Solving ambiguous problems</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Working effectively in a team</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Building something from scratch</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Understanding a client's need</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Translating technical knowledge into business value</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Securing and governing solutions</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Communicating work professionally</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Demonstrating capability to an employer or client</span>
         </div>
-
       </div>
     </section>
 
     <!-- ============================================================
-         TOOLKIT
+         PHASE
          ============================================================ -->
-    <section class="section section--alt" id="toolkit" aria-labelledby="toolkitTitle">
+    <section class="section section--alt">
+      <div class="container">
+        <div class="phase reveal">
+          <div>
+            <span class="phase__badge">Current Phase</span>
+            <h3>We are in the early stage — the training ground.</h3>
+            <p>
+              There is no paid contract phase yet and no client pipeline yet. What
+              exists right now is the <strong>training ground</strong> that will make
+              people ready when the pipeline exists.
+            </p>
+          </div>
+          <div>
+            <h3 style="font-size:1.05rem;color:var(--plum-800);margin-bottom:10px">What that means for you</h3>
+            <p>
+              You join at the ground floor of a builder community. You get the skills,
+              the projects, the portfolio and the collaboration — and you get to grow
+              with the ecosystem as it scales into paid client engagements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHO
+         ============================================================ -->
+    <section class="section" id="who" aria-labelledby="whoTitle">
       <div class="container">
 
         <header class="section__head reveal">
-          <p class="eyebrow">Starter kit</p>
-          <h2 class="section__title" id="toolkitTitle">Everything you need to begin</h2>
+          <p class="eyebrow">Who we build with</p>
+          <h2 class="section__title" id="whoTitle">We're looking for a specific kind of person</h2>
           <p class="section__lead">
-            Copy these commands, run them once, and you're ready to start documenting.
+            Not spectators. Builders, thinkers and future founders who are ready to
+            do the work.
           </p>
         </header>
 
-        <div class="grid grid--2">
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>
+            </span>
+            <h3 class="card__title">Early-stage professionals</h3>
+            <p class="card__text">
+              People with foundational knowledge in AI, cybersecurity, governance,
+              business or another related field.
+            </p>
+          </article>
 
-          <div class="snippet reveal">
-            <div class="snippet__bar">
-              <span class="snippet__lang">bash · install git</span>
-              <button class="snippet__copy" type="button" data-copy>Copy</button>
-            </div>
-            <pre class="snippet__pre"><code># Debian / Ubuntu / Kali
-sudo apt update && sudo apt install -y git
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 20h18M7 20v-6M12 20V7M17 20v-9"/></svg>
+            </span>
+            <h3 class="card__title">Emerging professionals</h3>
+            <p class="card__text">
+              People who have built experience but want to move away from repetitive
+              tasks toward more complex, meaningful problems.
+            </p>
+          </article>
 
-# Fedora / RHEL
-sudo dnf install -y git
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 16l9 5 9-5M3 12l9 5 9-5"/></svg>
+            </span>
+            <h3 class="card__title">Builders &amp; innovators</h3>
+            <p class="card__text">
+              Individuals with ideas and ambition who need the right environment,
+              collaborators, skills and opportunities.
+            </p>
+          </article>
 
-# macOS (Homebrew)
-brew install git
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 4v15M8.5 19h7M5 8h14"/><path d="M5 8l-2.6 5.4h5.2L5 8zM19 8l-2.6 5.4h5.2L19 8z"/></svg>
+            </span>
+            <h3 class="card__title">Future founders</h3>
+            <p class="card__text">
+              Individuals who intend to build solutions that solve meaningful
+              problems in the real world.
+            </p>
+          </article>
+        </div>
 
-# Verify
-git --version</code></pre>
+        <header class="section__head reveal" style="margin-top:70px;margin-bottom:26px">
+          <p class="eyebrow">Qualities we look for</p>
+          <h2 class="section__title" style="font-size:clamp(1.4rem,2.6vw,1.9rem)">
+            The mindset matters more than the CV
+          </h2>
+        </header>
+
+        <div class="chips reveal">
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Curiosity</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Commitment</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Critical thinking</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Systems thinking</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Willingness to burn midnight candles</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Collaboration skills</span>
+          <span class="chip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A desire to create meaningful impact</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PHILOSOPHY
+         ============================================================ -->
+    <section class="section section--alt" id="philosophy" aria-labelledby="philoTitle">
+      <div class="container">
+
+        <header class="section__head reveal">
+          <p class="eyebrow">Our core philosophy</p>
+          <h2 class="section__title" id="philoTitle">Seven principles behind everything we build</h2>
+        </header>
+
+        <div class="philo">
+          <div class="philo-item reveal">
+            <span class="n">01 — LEARNING</span>
+            <h4>Fill the bank</h4>
+            <p>Build a knowledge bank of the fundamentals that actually matter.</p>
           </div>
-
-          <div class="snippet reveal">
-            <div class="snippet__bar">
-              <span class="snippet__lang">bash · generate an SSH key</span>
-              <button class="snippet__copy" type="button" data-copy>Copy</button>
-            </div>
-            <pre class="snippet__pre"><code># Ed25519 is the modern default
-ssh-keygen -t ed25519 -C "you@example.com"
-
-# Start the agent
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-
-# Print the public key, then paste it into
-# GitHub → Settings → SSH and GPG keys
-cat ~/.ssh/id_ed25519.pub</code></pre>
+          <div class="philo-item reveal">
+            <span class="n">02 — BUILD</span>
+            <h4>Withdraw from the bank</h4>
+            <p>Apply what you have learnt by making something real.</p>
           </div>
+          <div class="philo-item reveal">
+            <span class="n">03 — SECURE</span>
+            <h4>Secure from scratch</h4>
+            <p>Whatever we build must be secure by design, not patched later.</p>
+          </div>
+          <div class="philo-item reveal">
+            <span class="n">04 — GOVERN</span>
+            <h4>Govern responsibly</h4>
+            <p>Consider the responsible, ethical, regulatory and risk implications.</p>
+          </div>
+          <div class="philo-item reveal">
+            <span class="n">05 — VALIDATE</span>
+            <h4>Test against reality</h4>
+            <p>Prove that what we built addresses a real-world problem.</p>
+          </div>
+          <div class="philo-item reveal">
+            <span class="n">06 — DELIVER</span>
+            <h4>Make it function</h4>
+            <p>Create something that works in a real-world environment.</p>
+          </div>
+          <div class="philo-item reveal">
+            <span class="n">07 — CREATE VALUE</span>
+            <h4>Unlock the value</h4>
+            <p>Explore the value available within the solutions we've built.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ============================================================
+         CORE AREAS
+         ============================================================ -->
+    <section class="section" aria-labelledby="areasTitle">
+      <div class="container">
+
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow">Core areas</p>
+          <h2 class="section__title" id="areasTitle">Where we go deep</h2>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>
+            </span>
+            <h3 class="card__title">Artificial Intelligence</h3>
+            <p class="card__text">
+              Building intelligent systems that solve real problems — from data
+              to deployment.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v6c0 4.6-3.1 8-7.5 9.3C7.6 20 4.5 16.6 4.5 12V6L12 3z"/><path d="M9.4 12.1l1.9 1.9 3.5-3.7"/></svg>
+            </span>
+            <h3 class="card__title">Cybersecurity</h3>
+            <p class="card__text">
+              Designing and defending systems with a security-first mindset from
+              day one.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 4v15M8.5 19h7M5 8h14"/><path d="M5 8l-2.6 5.4h5.2L5 8zM19 8l-2.6 5.4h5.2L19 8z"/></svg>
+            </span>
+            <h3 class="card__title">Governance</h3>
+            <p class="card__text">
+              Responsible, ethical and regulatory thinking baked into every
+              solution.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 20h18M7 20v-6M12 20V7M17 20v-9"/></svg>
+            </span>
+            <h3 class="card__title">Business &amp; Economics</h3>
+            <p class="card__text">
+              Translating technical capability into commercial and real-world
+              value.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         METRICS
+         ============================================================ -->
+    <section class="section section--alt" id="metrics" aria-labelledby="metricsTitle">
+      <div class="container">
+
+        <header class="section__head reveal">
+          <p class="eyebrow">How we measure success</p>
+          <h2 class="section__title" id="metricsTitle">We count builders, not attendance</h2>
+          <p class="section__lead">
+            Progress is measured by what people can do — and by what actually
+            leaves the building.
+          </p>
+        </header>
+
+        <div class="metrics">
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Number of serious builders developed</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Number of real-world projects completed</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Projects developed and deployed</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Projects validated by external users or organizations</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Members who secure employment</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Members who secure paid opportunities</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Client engagements delivered</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Revenue generated through member-led work</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Products creating revenue</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Partnerships established</span></div>
+          <div class="metric reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Members progressing into leadership &amp; mentorship roles</span></div>
+        </div>
+
+        <div class="measure reveal">
+          <span class="tag">The Ultimate Measure</span>
+          <p class="big">
+            Can someone join The Purpose Protocol, develop their capabilities, build
+            something meaningful — and leave with the ability to create value
+            independently?
+          </p>
         </div>
       </div>
     </section>
@@ -1746,23 +1300,20 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
     <section class="section" id="join" aria-labelledby="joinTitle">
       <div class="container">
         <div class="cta reveal">
-          <!-- Inline logo large -->
-          <svg class="cta__logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="80" height="80">
-            <path d="M32 4 8 14v18c0 16 10.7 29.3 24 32 13.3-2.7 24-16 24-32V14L32 4z" fill="#7C3AED" stroke="#A78BFA" stroke-width="2.5"/>
-            <circle cx="32" cy="30" r="9" fill="#FFFFFF"/>
-            <rect x="29" y="36" width="6" height="12" rx="2" fill="#FFFFFF"/>
-            <path d="M20 20l4 4M44 20l-4 4M20 44l4-4M44 44l-4-4" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.6"/>
-          </svg>
-          <h2 class="cta__title" id="joinTitle">Join Protocol Color Purple and White</h2>
+          <img class="cta__logo" src="logo.png" alt="The Purpose Protocol logo" onerror="this.style.display='none'" />
+          <h2 class="cta__title" id="joinTitle">Ready to stop ideating and start executing?</h2>
           <p class="cta__text">
-            Learn in public. Document everything. Help the next person do the same.
+            Join the community, bring your curiosity and your commitment — we'll bring
+            the environment, the collaborators and the real-world problems.
           </p>
           <div class="cta__actions">
-            <a class="btn btn--primary" href="https://github.com/" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.88 1.52 2.31 1.08 2.87.82.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-              Open GitHub
+            <a class="btn btn--wa" href="https://chat.whatsapp.com/IMDRyGtlf6E3kGmjJ1Q8Vx?mode=gi_t" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              Join the WhatsApp Community
             </a>
-            <a class="btn btn--ghost" href="#guides">Browse guides</a>
+            <a class="btn btn--ghost" href="#flow">Review how it works</a>
           </div>
         </div>
       </div>
@@ -1778,38 +1329,33 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
 
       <div class="site-footer__brand">
         <a class="brand" href="#top">
-          <!-- Inline logo small -->
-          <svg class="brand__logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40">
-            <path d="M32 4 8 14v18c0 16 10.7 29.3 24 32 13.3-2.7 24-16 24-32V14L32 4z" fill="#7C3AED" stroke="#A78BFA" stroke-width="2.5"/>
-            <circle cx="32" cy="30" r="9" fill="#FFFFFF"/>
-            <rect x="29" y="36" width="6" height="12" rx="2" fill="#FFFFFF"/>
-          </svg>
+          <img class="brand__logo" src="logo.png" alt="The Purpose Protocol logo" onerror="this.style.visibility='hidden'" />
           <span class="brand__text">
-            <span class="brand__name">Protocol</span>
-            <span class="brand__tag">Color Purple &amp; White</span>
+            <span class="brand__name">The Purpose Protocol</span>
+            <span class="brand__tag">Talent Incubator</span>
           </span>
         </a>
         <p class="site-footer__blurb">
-          A cybersecurity community and GitHub education hub.
-          Learn it. Document it. Share it.
+          A talent incubator hub and ecosystem. Learn it. Build it.
+          Secure it. Govern it. Validate it. Deliver it. Create value.
         </p>
       </div>
 
       <nav class="site-footer__nav" aria-label="Footer">
-        <div class="site-footer__col">
-          <h3 class="site-footer__heading">Learn</h3>
+        <div>
+          <h3 class="site-footer__heading">Explore</h3>
           <ul class="site-footer__list">
-            <li><a href="#github">What is GitHub</a></li>
-            <li><a href="#guides">Guides</a></li>
-            <li><a href="#toolkit">Starter kit</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#flow">How it works</a></li>
+            <li><a href="#who">Who it's for</a></li>
           </ul>
         </div>
-        <div class="site-footer__col">
+        <div>
           <h3 class="site-footer__heading">Community</h3>
           <ul class="site-footer__list">
-            <li><a href="#about">About us</a></li>
-            <li><a href="#join">Join</a></li>
-            <li><a href="#top">Back to top</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="https://chat.whatsapp.com/IMDRyGtlf6E3kGmjJ1Q8Vx?mode=gi_t" target="_blank" rel="noopener">Join on WhatsApp</a></li>
           </ul>
         </div>
       </nav>
@@ -1817,8 +1363,8 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
     </div>
 
     <div class="container site-footer__bottom">
-      <p>&copy; <span id="year">2025</span> Protocol Color Purple and White. All rights reserved.</p>
-      <p class="site-footer__built">Built with Git, Markdown &amp; GitHub Pages.</p>
+      <p>&copy; <span id="year">2026</span> The Purpose Protocol. All rights reserved.</p>
+      <p>Learn · Build · Solve · Deliver · Create Value.</p>
     </div>
   </footer>
 
@@ -1826,9 +1372,7 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
     (function () {
       "use strict";
 
-      /* ==========================================================
-         MOBILE NAV
-         ========================================================== */
+      /* Mobile nav */
       var navToggle = document.getElementById("navToggle");
       var primaryNav = document.getElementById("primaryNav");
 
@@ -1838,7 +1382,6 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
           navToggle.setAttribute("aria-expanded", String(!isOpen));
           primaryNav.classList.toggle("is-open", !isOpen);
         });
-
         primaryNav.addEventListener("click", function (e) {
           if (e.target.closest("a")) {
             navToggle.setAttribute("aria-expanded", "false");
@@ -1847,114 +1390,98 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
         });
       }
 
-      /* ==========================================================
-         HEADER SCROLL SHADOW
-         ========================================================== */
+      /* Header scroll */
       var header = document.getElementById("siteHeader");
-
       function onScroll() {
-        if (header) {
-          header.classList.toggle("is-scrolled", window.scrollY > 8);
-        }
+        if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
       }
-
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
 
-      /* ==========================================================
-         REVEAL ON SCROLL
-         ========================================================== */
+      /* Reveal */
       var revealElements = document.querySelectorAll(".reveal");
-
       if ("IntersectionObserver" in window) {
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-        );
-
-        revealElements.forEach(function (el) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        revealElements.forEach(function (el, i) {
+          el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + "ms";
           observer.observe(el);
         });
       } else {
-        revealElements.forEach(function (el) {
-          el.classList.add("is-visible");
-        });
+        revealElements.forEach(function (el) { el.classList.add("is-visible"); });
       }
 
-      /* ==========================================================
-         COPY BUTTONS
-         ========================================================== */
-      document.querySelectorAll("[data-copy]").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var wrapper = btn.closest(".snippet");
-          if (!wrapper) return;
-          var code = wrapper.querySelector("code");
-          if (!code) return;
+      /* Slideshow */
+      (function () {
+        var track = document.getElementById("slides");
+        if (!track) return;
+        var slides = Array.prototype.slice.call(track.children);
+        var dotsWrap = document.getElementById("dots");
+        var prevBtn = document.getElementById("prev");
+        var nextBtn = document.getElementById("next");
+        var panel = document.getElementById("slideshow");
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var index = 0, timer = null, DELAY = 6500;
 
-          var text = code.innerText;
-
-          function markCopied() {
-            var original = btn.textContent;
-            btn.textContent = "Copied!";
-            btn.classList.add("is-copied");
-            setTimeout(function () {
-              btn.textContent = original;
-              btn.classList.remove("is-copied");
-            }, 1800);
-          }
-
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(markCopied).catch(function () {
-              fallbackCopy(text, markCopied);
-            });
-          } else {
-            fallbackCopy(text, markCopied);
-          }
+        slides.forEach(function (s, n) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "dot";
+          b.setAttribute("aria-label", "Go to slide " + (n + 1));
+          b.addEventListener("click", function () { go(n); restart(); });
+          dotsWrap.appendChild(b);
         });
-      });
+        var dots = Array.prototype.slice.call(dotsWrap.children);
 
-      function fallbackCopy(text, callback) {
-        var textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.setAttribute("readonly", "");
-        textarea.style.position = "absolute";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          callback();
-        } catch (err) {
-          /* silent */
+        function go(n) {
+          index = (n + slides.length) % slides.length;
+          track.style.transform = "translateX(" + (-index * 100) + "%)";
+          dots.forEach(function (d, k) { d.classList.toggle("active", k === index); });
+          slides.forEach(function (s, k) { s.setAttribute("aria-hidden", k !== index); });
         }
-        document.body.removeChild(textarea);
-      }
+        function next() { go(index + 1); }
+        function prev() { go(index - 1); }
+        function start() { if (reduce) return; stop(); timer = setInterval(next, DELAY); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+        function restart() { stop(); start(); }
 
-      /* ==========================================================
-         YEAR
-         ========================================================== */
-      var yearEl = document.getElementById("year");
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+        nextBtn.addEventListener("click", function () { next(); restart(); });
+        prevBtn.addEventListener("click", function () { prev(); restart(); });
+        panel.addEventListener("mouseenter", stop);
+        panel.addEventListener("mouseleave", start);
+        panel.addEventListener("focusin", stop);
+        panel.addEventListener("focusout", start);
 
-      /* ==========================================================
-         TERMINAL TYPING EFFECT
-         ========================================================== */
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight") { next(); restart(); }
+          if (e.key === "ArrowLeft") { prev(); restart(); }
+        });
+
+        var startX = null;
+        panel.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+        panel.addEventListener("touchend", function (e) {
+          if (startX === null) return;
+          var dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); restart(); }
+          startX = null;
+        });
+
+        go(0);
+        start();
+      })();
+
+      /* Terminal typing */
       var terminalCode = document.getElementById("terminalCode");
       if (terminalCode) {
         var fullText = terminalCode.textContent;
         terminalCode.textContent = "";
-        var i = 0;
-        var speed = 18;
-
+        var i = 0, speed = 14;
         function typeChar() {
           if (i < fullText.length) {
             terminalCode.textContent += fullText.charAt(i);
@@ -1962,10 +1489,13 @@ cat ~/.ssh/id_ed25519.pub</code></pre>
             setTimeout(typeChar, speed);
           }
         }
-
-        // Start after a short delay
         setTimeout(typeChar, 600);
       }
+
+      /* Year */
+      var yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     })();
   </script>
 </body>
